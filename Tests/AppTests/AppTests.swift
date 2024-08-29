@@ -20,4 +20,14 @@ final class AppTests: XCTestCase {
             XCTAssertEqual(res.body.string, "Hello, world!")
         })
     }
+	
+	func testEvents() {
+		let event = PingEvent()
+		do {
+			var buffer = try event.buffer()
+		} catch let error {
+			print(error)
+			XCTFail(error.localizedDescription)
+		}
+	}
 }
